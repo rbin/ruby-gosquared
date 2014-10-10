@@ -14,7 +14,7 @@ module GoSquared
       @endpoint   = params.fetch(:endpoint, '/endpoint/')
       @conn       = params.fetch(:conn, create_conn)
       yield self if block_given?
-      raise SendGrid::Exception.new('api_user and api_key are required') unless @api_user && @api_key
+      raise GoSquared::Exception.new('api_user and api_key are required') unless @api_user && @api_key
     end
 
 
